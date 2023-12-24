@@ -4,20 +4,20 @@ const card1:Card = {
   title: 'Card 1',
   description: 'This is card 1',
    subtitle: 'This is subtitle1',
-  image: 'https://picsum.photos/200/300'
+  image: '../../assets/images/card-media.png'
 }
 const card2 = {
   title: 'Card 2',
   description: 'This is card 2',
   subtitle: 'This is subtitle2',
-  image: 'https://picsum.photos/200/300'
+  image: '../../assets/images/card-media.png'
 }
 
 const card3 = {
   title: 'Card 3',
   description: 'This is card 3',
   subtitle: 'This is subtitle3',
-  image: 'https://picsum.photos/200/300'
+  image: '../../assets/images/card-media.png'
 }
 
 
