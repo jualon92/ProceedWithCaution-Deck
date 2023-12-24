@@ -1,4 +1,4 @@
-## Draw a card game 
+# Draw a card game 
 
-##Tools used
+## Tools used
 ionic + angular 17
