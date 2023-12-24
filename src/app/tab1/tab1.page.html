@@ -12,38 +12,37 @@
       <ion-title size="large">Card example</ion-title>
     </ion-toolbar>
   </ion-header> -->
-  @if (playerDeck().length === 0) {
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-      <ion-card-header>
-        <ion-card-title>Sorry, no more cards</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-              No cards left
-      </ion-card-content>
-    </ion-card>
 
-    <ion-button (click)="shuffleDeck()" ion-button fill="outline" shape="round" size="large" color="primary">Shuffle again<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
+
+
+  @if(firstPlay()){
+  <ion-button (click)="firstPlay.set(false);" ion-button fill="outline" shape="round" size="large" color="primary">Draw
+    first card
+    <ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
+
+  }@else if (playerDeck().length === 0) {
+
+  <app-no-card-left (shuffleDeck)="shuffleDeck()" />
 
   }@else {
-    <ion-card  >
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-      <ion-card-header>
-        <ion-card-title>{{actualCard().title}}</ion-card-title>
-        <ion-card-subtitle>{{actualCard().subtitle}}</ion-card-subtitle>
-      </ion-card-header>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <ion-card-title>{{actualCard().title}}</ion-card-title>
+      <ion-card-subtitle>{{actualCard().subtitle}}</ion-card-subtitle>
+    </ion-card-header>
 
-      <ion-card-content>
-        {{actualCard().description}}
-      </ion-card-content>
+    <ion-card-content>
+      {{actualCard().description}}
+    </ion-card-content>
 
-      <ion-button fill="clear" color="warning">Skip</ion-button>
-      <ion-button fill="clear" color="success">Done</ion-button>
-    </ion-card>
-    <ion-button (click)="drawNextCard()" ion-button fill="outline" shape="round" size="large" color="primary"> Draw a card<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
+    <ion-button fill="clear" color="warning">Skip</ion-button>
+    <ion-button fill="clear" color="success">Done</ion-button>
+  </ion-card>
+  <ion-button (click)="drawNextCard()" ion-button fill="outline" shape="round" size="large" color="primary"> Draw next
+    card<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
 
   }
-
 
 
 </ion-content>
