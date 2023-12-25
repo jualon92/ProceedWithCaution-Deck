@@ -41,7 +41,8 @@
       color="primary">Shuffle
       again<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
     }@else {
-    <ion-card style="height: 70%;">
+    <ion-card    style="height: 70%;" *ngIf="cardToggle" class="animate__animated  animate__fadeIn animate__slow
+    "  >
       <img alt="Silhouette of mountains" [src]="actualCard().image" />
       <div style="display:flex; flex-direction: column;">
         <ion-card-header>

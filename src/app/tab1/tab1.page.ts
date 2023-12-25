@@ -7,7 +7,7 @@ import { first } from 'rxjs';
   selector: 'app-tab1',
 
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
   firstPlay = signal<boolean>(true);
@@ -22,12 +22,11 @@ export class Tab1Page {
   completedCardMessage: string = "";
   skippedCardMessage: string = "";
   lastCardName: string = "";
+  cardToggle = true;
 
-  ngOnInit(){
-   /*  this.completedCardMessage =  "Has obtenido 10 puntos por completar " + this.actualCard().title
-    this.skippedCardMessage = "Has perdido 5 puntos por saltar " + this.actualCard().title */
+  constructor(public cd: ChangeDetectorRef) {
+
   }
-
 
   drawNextCard(){
     this.lastCardName = this.actualCard().title;
@@ -35,10 +34,18 @@ export class Tab1Page {
     this.discardPile.push(this.actualCard());
     //remove card from the deck
     this.playerDeck.update( card => card.filter( c => c.title !== this.actualCard().title));
-
+    this.toggleCardAnimation();
   }
 
 
+  toggleCardAnimation():void{
+    //TODO: dont trigger additional detection cycles
+    this.cardToggle = false;
+    this.cd.detectChanges();
+    this.cardToggle = true;
+    this.cd.detectChanges();
+
+  }
   addToCompletePile(){
     this.completedCards.push(this.actualCard());
   }
