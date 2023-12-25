@@ -16,8 +16,8 @@ export class Tab1Page {
   //actual card is the card at the top of the deck
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
   discardPile: Card[] = [];
-
-
+  skippedCards: Card[]= []
+  completedCards: Card[] = [];
   drawNextCard(){
     //add the card to card history
     this.discardPile.push(this.actualCard());
@@ -26,6 +26,13 @@ export class Tab1Page {
 
   }
 
+  addToCompletePile(){
+    this.completedCards.push(this.actualCard());
+  }
+
+  addToSkippedPile(){
+      this.skippedCards.push(this.actualCard());
+  }
 
   shuffleDeck(){
    //redo the deck
