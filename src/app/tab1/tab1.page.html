@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" id="header2">
   <ion-toolbar>
     <ion-title>
       Cards
@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding"  >
+
   <!-- <ion-header  >
     <ion-toolbar>
       <ion-title size="large">Card example</ion-title>
@@ -59,16 +60,19 @@
       </div>
     </ion-card>
     <div style="gap:1em; width:300px;display:flex; flex-direction: column; align-items: center;">
-      <ion-button style="height:10%; width:inherit" (click)="addToCompletePile(); this.drawNextCard();" ion-button
+      <ion-button  id="open-toast-next" expand="block" style="height:10%; width:inherit" (click)="addToCompletePile(); this.drawNextCard();" ion-button
         fill="solid" shape="round" size="large" color="primary">Done <ion-icon slot="end"
           name="checkmark-done-circle-outline"></ion-icon> </ion-button>
 
-      <ion-button style="height:10%; width:inherit" (click)="addToSkippedPile(); this.drawNextCard()" ion-button
+      <ion-button id="open-toast-skip"  style="height:10%; width:inherit" (click)="addToSkippedPile(); this.drawNextCard()" ion-button
         fill="solid" shape="round" size="large" color="warning"> Skip <ion-icon slot="end"
           name="play-skip-forward-circle-outline"></ion-icon> </ion-button>
 
-    </div>
 
+    </div>
+   <!--  positionAnchor="header2" -->
+    <ion-toast position="top"  icon="trophy-outline"  trigger="open-toast-next" [message]="completedCardMessage" [duration]="1200"></ion-toast>
+    <ion-toast position="top"  icon="play-skip-forward-outline"  trigger="open-toast-skip" [message]="skippedCardMessage" [duration]="1200"></ion-toast>
 
     }
 

@@ -18,6 +18,13 @@ export class Tab1Page {
   discardPile: Card[] = [];
   skippedCards: Card[]= []
   completedCards: Card[] = [];
+  completedCardMessage: string = "";
+  skippedCardMessage: string = "";
+
+  ngOnInit(){
+    this.completedCardMessage =  "Has obtenido 10 puntos por completar " + this.actualCard().title
+    this.skippedCardMessage = "Has perdido 5 puntos por saltar " + this.actualCard().title
+  }
   drawNextCard(){
     //add the card to card history
     this.discardPile.push(this.actualCard());
@@ -25,6 +32,7 @@ export class Tab1Page {
     this.playerDeck.update( card => card.filter( c => c.title !== this.actualCard().title));
 
   }
+
 
   addToCompletePile(){
     this.completedCards.push(this.actualCard());
