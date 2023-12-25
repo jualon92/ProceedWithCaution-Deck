@@ -15,17 +15,22 @@ export class Tab1Page {
   readonly playerDeck  = signal<Card[]>(this.initialDeck);
   //actual card is the card at the top of the deck
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
+/*   readonly cardMessage = computed( () => this.actualCard().title); */
   discardPile: Card[] = [];
   skippedCards: Card[]= []
   completedCards: Card[] = [];
   completedCardMessage: string = "";
   skippedCardMessage: string = "";
+  lastCardName: string = "";
 
   ngOnInit(){
-    this.completedCardMessage =  "Has obtenido 10 puntos por completar " + this.actualCard().title
-    this.skippedCardMessage = "Has perdido 5 puntos por saltar " + this.actualCard().title
+   /*  this.completedCardMessage =  "Has obtenido 10 puntos por completar " + this.actualCard().title
+    this.skippedCardMessage = "Has perdido 5 puntos por saltar " + this.actualCard().title */
   }
+
+
   drawNextCard(){
+    this.lastCardName = this.actualCard().title;
     //add the card to card history
     this.discardPile.push(this.actualCard());
     //remove card from the deck

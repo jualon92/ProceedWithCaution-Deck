@@ -71,8 +71,8 @@
 
     </div>
    <!--  positionAnchor="header2" -->
-    <ion-toast position="top"  icon="trophy-outline"  trigger="open-toast-next" [message]="completedCardMessage" [duration]="1200"></ion-toast>
-    <ion-toast position="top"  icon="play-skip-forward-outline"  trigger="open-toast-skip" [message]="skippedCardMessage" [duration]="1200"></ion-toast>
+    <ion-toast position="top"  icon="trophy-outline"  trigger="open-toast-next" [message]="'Has obtenido 10 puntos por completar ' + this.lastCardName" [duration]="1200"></ion-toast>
+    <ion-toast position="top"  icon="play-skip-forward-outline"  trigger="open-toast-skip" [message]="'Has perdido 5 puntos por saltar'  + this.lastCardName" [duration]="1200"></ion-toast>
 
     }
 
