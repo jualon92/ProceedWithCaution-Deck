@@ -1,27 +1,11 @@
-<ion-header [translucent]="true" id="header2">
-  <ion-toolbar>
-    <ion-title>
-      Cards
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+ 
 <ion-content [fullscreen]="true" class="ion-padding">
 
 
   <div class="main-container">
 
-    @if(isInBeginPlayingScreen()){
-    <app-begin-playing (shouldStart)="isInBeginPlayingScreen.set($event); "></app-begin-playing>
-    }@else if (gameEnded()) {
-    <ion-button class="shuffleButton " (click)="shuffleDeck()" ion-button fill="outline" shape="round" size="large"
-      color="primary">Shuffle
-      again<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
-    }@else {
-    <app-drawing-cards (endGame)="gameEnded.set($event)" />
-    }
 
-
+    <app-begin-playing  ></app-begin-playing>
 
   </div>
 
