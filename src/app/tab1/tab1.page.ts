@@ -13,7 +13,7 @@ export class Tab1Page {
   isInBeginPlayingScreen = signal<boolean>(true);
   initialDeck = shuffle(deck);
   readonly playerDeck  = signal<Card[]>(this.initialDeck);
-  readonly gameEnded = computed( () => this.playerDeck().length === 0);
+  readonly gameEnded =  signal<boolean>(false);
   //actual card is the card at the top of the deck
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
 /*   readonly cardMessage = computed( () => this.actualCard().title); */
@@ -60,6 +60,7 @@ export class Tab1Page {
    //redo the deck
     this.playerDeck.set(shuffle(deck));
     this.discardPile = [];
+    this.gameEnded.set(false);
   }
 
 
