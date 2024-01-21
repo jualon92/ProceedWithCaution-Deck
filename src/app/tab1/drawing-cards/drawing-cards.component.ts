@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, computed, s
 import { Card } from '../entity';
 import { shuffle } from 'lodash-es';
 import { deck } from '../card-db';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drawing-cards',
@@ -13,7 +14,7 @@ export class DrawingCardsComponent  {
   readonly playerDeck  = signal<Card[]>(shuffle(deck));
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
   cardToggle = true;
-  constructor(public cd: ChangeDetectorRef) { }
+  constructor(public cd: ChangeDetectorRef, private router: Router) { }
 
 
  /*  toggleCardAnimation():void{
@@ -30,7 +31,7 @@ export class DrawingCardsComponent  {
     this.playerDeck.update( card => card.filter( c => c.title !== this.actualCard().title));
    
     if (this.playerDeck().length === 0){
-      this.endGame.emit(true);
+      this.router.navigate(['/tabs/tab1/end-game']);
     }
 
     // this.toggleCardAnimation();
