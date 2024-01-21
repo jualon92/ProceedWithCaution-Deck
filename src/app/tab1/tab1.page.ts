@@ -10,9 +10,10 @@ import { first } from 'rxjs';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  firstPlay = signal<boolean>(true);
+  isInBeginPlayingScreen = signal<boolean>(true);
   initialDeck = shuffle(deck);
   readonly playerDeck  = signal<Card[]>(this.initialDeck);
+  readonly gameEnded = computed( () => this.playerDeck().length === 0);
   //actual card is the card at the top of the deck
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
 /*   readonly cardMessage = computed( () => this.actualCard().title); */
@@ -28,6 +29,7 @@ export class Tab1Page {
 
   }
 
+ 
   drawNextCard(){
     this.lastCardName = this.actualCard().title;
     //add the card to card history

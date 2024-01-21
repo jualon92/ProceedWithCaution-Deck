@@ -16,27 +16,9 @@
 
   <div class="main-container">
 
-    @if(firstPlay()){
-    <div class="first-play-menu">
-
-
-      <ion-button class="first-draw-btn ion-padding" size="large" (click)="firstPlay.set(false);" ion-button
-        fill="solid" shape="round" size="large" color="primary">Draw
-        first card
-        <ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
-
-      <ion-button class="ion-padding" size="large" (click)="firstPlay.set(false);" ion-button fill="outline"
-        shape="round" size="large" color="primary">See last cards
-        <ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
-
-
-      <ion-button class="ion-padding" ion-padding size="large" (click)="firstPlay.set(false);" ion-button fill="outline"
-        shape="round" size="large" color="warning">Looking for a challenge?
-        <ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
-    </div>
-    }@else if (playerDeck().length === 0) {
-
-
+    @if(isInBeginPlayingScreen()){
+        <app-begin-playing (shouldStart)="isInBeginPlayingScreen.set($event); "></app-begin-playing>
+   }@else if (gameEnded()) {
     <ion-button class="shuffleButton " (click)="shuffleDeck()" ion-button fill="outline" shape="round" size="large"
       color="primary">Shuffle
       again<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>

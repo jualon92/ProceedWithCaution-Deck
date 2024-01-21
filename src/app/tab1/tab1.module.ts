@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { NoCardLeftComponent } from './no-card-left/no-card-left.component';
+import { BeginPlayingComponent } from './begin-playing/begin-playing.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { NoCardLeftComponent } from './no-card-left/no-card-left.component';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
   ],
-  declarations: [Tab1Page, NoCardLeftComponent,],
+  declarations: [Tab1Page, NoCardLeftComponent, BeginPlayingComponent],
 })
 export class Tab1PageModule {}
