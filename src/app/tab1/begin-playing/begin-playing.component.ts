@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-begin-playing',
@@ -8,10 +10,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class BeginPlayingComponent  {
   
   @Output() shouldStart = new EventEmitter<boolean>();
-  constructor() { }
+
+  constructor(private router : Router) { 
+
+  }
 
 
   onStartGame($event: Event){
-    this.shouldStart.emit(false)
+     this.router.navigate(['/tabs/tab1/draw-cards']);
   }
 }
