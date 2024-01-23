@@ -1,9 +1,10 @@
 import { Card } from "./entity"
 
 const card1:Card = {
-  title: 'Card 1',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu tortor sit amet risus elementum pharetra vel vel nisl. Sed ut mauris at tortor semper semper. Curabitur ac luctus justo. Integer consectetur dui id dictum sodales. Cras dignissim finibus nunc consequat cursus. Nulla quis nulla porttitor lorem varius laoreet.',
-   subtitle: 'This is subtitle1',
+  title: 'Far sight',
+
+  description: 'Look at anything that is about 5 meters away and count slowly to 20. \n  \n   For example: an object in the room, a tree on the street, something in the window.  ',
+   subtitle: 'vision',
   image: '../../assets/images/card-media.png'
 }
 const card2 = {
