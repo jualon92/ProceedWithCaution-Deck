@@ -1,7 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { Router } from '@angular/router';
- 
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-begin-playing',
   templateUrl: './begin-playing.component.html',
@@ -11,12 +10,12 @@ export class BeginPlayingComponent  {
   
   @Output() shouldStart = new EventEmitter<boolean>();
 
-  constructor(private router : Router) { 
+  constructor(public navCtrl: NavController,) { 
 
   }
 
 
   onStartGame($event: Event){
-     this.router.navigate(['/tabs/tab1/draw-cards']);
+    this.navCtrl.navigateForward('/tabs/tab1/draw-cards' );
   }
 }
