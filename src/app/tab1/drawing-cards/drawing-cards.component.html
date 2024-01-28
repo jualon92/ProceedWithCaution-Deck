@@ -35,9 +35,12 @@
               <h2>Benefits</h2> 
             <ul>
 
-              <li>Relaxes eye muscle</li>
-              <li>Prevents Eye Strain</li>
-              <li>Prevents Headaches</li>
+              @for (benefit of actualCard().benefits; track  $index) {
+                <li>{{benefit}}</li>
+              } @empty {
+                No benefits... Thats odd.. 
+              }
+
             </ul>
           </ion-label>
           </ion-item>

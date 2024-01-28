@@ -3,7 +3,7 @@ export interface Card {
   description:  string,
   subtitle: string,
   image:  string
-
+  benefits: string[]
 }
 
 export interface Deck {
