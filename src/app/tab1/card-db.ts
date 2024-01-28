@@ -1,4 +1,4 @@
-import { Card } from "./entity"
+import { Card, Difficulties } from "./entity"
 
 const card1:Card = {
   title: 'Far sight',
@@ -10,7 +10,8 @@ const card1:Card = {
     "Relaxes the eye muscles and improves vision",
     "Prevents eye strain and headaches",
     "Reduces stress and anxiety",
-  ]
+  ],
+  difficulty: Difficulties.Hard
 }
 const card2 = {
   title: 'Card 2',
@@ -21,7 +22,8 @@ const card2 = {
     "placeholder4",
     "placeholder5",
     "placeholder6",
-  ]
+  ],
+  difficulty:   Difficulties.Easy
 }
 
 const card3 = {
@@ -33,7 +35,8 @@ const card3 = {
     "placeholder1",
     "placeholder2",
     "placeholder3",
-  ]
+  ],
+  difficulty: Difficulties.Medium
 }
 
 
