@@ -13,6 +13,7 @@ export class DrawingCardsComponent  {
   @Output() endGame = new EventEmitter<boolean>();
   readonly playerDeck  = signal<Card[]>(shuffle(deck));
   readonly actualCard  = computed( ()  => this.playerDeck()[0]);
+  points = 0;
   cardToggle = true;
   constructor(public cd: ChangeDetectorRef, private router: Router) { }
 
@@ -31,7 +32,7 @@ export class DrawingCardsComponent  {
     this.playerDeck.update( card => card.filter( c => c.title !== this.actualCard().title));
    
     if (this.playerDeck().length === 0){
-      this.router.navigate(['/tabs/tab1/end-game']);
+      this.router.navigate(['/tabs/tab1/end-game'], { queryParams: { points: this.points } });
     }
 
     // this.toggleCardAnimation();
@@ -46,10 +47,11 @@ export class DrawingCardsComponent  {
    }
 
    onQuestDone(){
-
+      this.points = this.points + this.actualCard().difficulty.points;
       this.drawNextCard();
    }
 
+ 
    onQuestSkipped(){
       this.drawNextCard();
    }

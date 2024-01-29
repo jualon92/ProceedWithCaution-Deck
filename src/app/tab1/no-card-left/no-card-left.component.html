@@ -1,7 +1,15 @@
-
- 
 <ion-content [fullscreen]="true" class="ion-padding">
-<ion-button class="shuffleButton " (click)="onRestartGame()" ion-button fill="outline" shape="round"
-      size="large" color="primary">Shuffle
+  <ion-item class="ion-no-margin">
+    <ion-label>
+      <h1 class="ion-text-center"> You won the {{this.medal.message}} medal </h1>
+    </ion-label>
+  </ion-item>
+  <img [src]="this.medal.image" alt="">
+  <div style="display:flex;     justify-content: center; margin-top:10%">
+
+
+    <ion-button class="shuffleButton " (click)="onRestartGame()" ion-button fill="outline" shape="round" size="large"
+      color="primary">Shuffle
       again<ion-icon slot="end" name="images-sharp"></ion-icon> </ion-button>
-    </ion-content>
+  </div>
+</ion-content>
