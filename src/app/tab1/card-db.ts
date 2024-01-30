@@ -7,7 +7,7 @@ const card1:Card = {
    subtitle: 'vision',
   image: '../../assets/images/card-media.png',
   benefits: [
-    "Relaxes the eye muscles and improves vision",
+    "Relaxes the eye muscles",
     "Prevents eye strain and headaches",
     "Reduces stress and anxiety",
   ],
