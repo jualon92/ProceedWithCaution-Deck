@@ -14,27 +14,27 @@ const card1:Card = {
   difficulty: Difficulties.Hard
 }
 const card2 = {
-  title: 'Card 2',
-  description: ' orci nisi laoreet velit, at pharetra urna nu nia tortor eget felis sagittis efficitur. Etiam congue orci purus ',
+  title: 'Power Nap',
+  description: 'Embark on a 5-minute power nap mission. Just don t forget to set an alarm unless you want your quick nap to turn into a full-blown siesta! 😴✨',
   subtitle: 'nc eget neque. Maecenas laci , fermentum tempus mauris tincidunt id. Pellentesque dapibus leo eu aliquam aliquet. Proin dictum velit vitae elit porttitor vehicula. Phasellus nec finibus augue. Fusce vestibulum felis tristique porta gravida. Curabitur gravida ut odio ac eleifend. Ut eu nulla mauris.',
   image: '../../assets/images/card-media.png',
   benefits: [
-    "placeholder4",
-    "placeholder5",
-    "placeholder6",
+    "Reduced fatigue.",
+    "Improved mood",
+    "Increased alertness",
   ],
   difficulty:   Difficulties.Easy
 }
 
 const card3 = {
-  title: 'Card 3',
-  description: 'ris ullamcorper, ultricies fringilla libero eleifend. Integer vel ligula luctus, euismod urna sit amet, ultrices tellus',
+  title: 'Toe-Tapping Frenzy',
+  description: 'Take 2 minute to release tension by tapping your toes rapidly at the tune of your favourite song',
   subtitle: 'This is subtitle3',
   image: '../../assets/images/card-media.png',
   benefits: [
-    "placeholder1",
-    "placeholder2",
-    "placeholder3",
+    "Increases blood circulation",
+    "Targets tension in the lower body.",
+    "Reduces stress",
   ],
   difficulty: Difficulties.Medium
 }

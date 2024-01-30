@@ -10,7 +10,7 @@
 <ion-card  >
       <img alt="Silhouette of mountains" [src]="actualCard().image" />
       <div >
-        <ion-card-header style="padding-bottom:0; padding-top:10px">
+        <ion-card-header style="padding-bottom:0 ">
           <ion-card-title > <h1  class="ion-no-margin">{{actualCard().title}} </h1> </ion-card-title>
          <ion-card-subtitle style="display:flex; flex-direction:row; align-items: center;"> <ion-label>Difficulty: </ion-label>
           <ion-chip [color]="actualCard().difficulty.color"  >
@@ -23,7 +23,7 @@
  
 
           <ion-item>
-            <ion-label style="    margin-top: 0px;">
+            <ion-label style=" text-align: center;">
              <!--  <h2>Description   </h2> -->
               <p style="margin-top:16px; height: 80px; color:black">{{actualCard().description}}</p> 
            
@@ -33,7 +33,7 @@
 
           <ion-item style="height: 150px;">
             <ion-label>
-              <h2>Benefits</h2> 
+           <!--    <h2>Benefits</h2>  -->
             <ul>
 
               @for (benefit of actualCard().benefits; track  $index) {
