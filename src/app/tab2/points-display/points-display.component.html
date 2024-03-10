@@ -1,0 +1,14 @@
+<ion-grid  style="width: 100%;">
+  @for (point of points; track $index) {
+    <ion-row style="border: 1px solid black;" >
+     
+      <ion-col style="border: 1px solid black;">
+        {{point.date | date: 'dd/MM, HH:mm'  }}
+      </ion-col>
+      <ion-col style="border: 1px solid black;">
+        {{point.points}}
+     </ion-col>
+    </ion-row>
+  }
+
+</ion-grid>
