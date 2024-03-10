@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { PointsDisplayComponent } from './points-display/points-display.component';
+import { MedalsPipe } from '../pipes/medals.pipe';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { PointsDisplayComponent } from './points-display/points-display.componen
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page, PointsDisplayComponent]
+  declarations: [Tab2Page, PointsDisplayComponent, MedalsPipe]
 })
 export class Tab2PageModule {}

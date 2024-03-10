@@ -6,7 +6,8 @@
         {{point.date | date: 'dd/MM, HH:mm'  }}
       </ion-col>
       <ion-col style="border: 1px solid black;">
-        {{point.points}}
+     
+         <ion-img  [style.height]="'42px'" src="{{(point.points | medals).image}}" alt=""/>
      </ion-col>
     </ion-row>
   }
