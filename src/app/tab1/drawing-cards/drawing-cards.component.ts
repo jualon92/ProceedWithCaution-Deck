@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, computed, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Card } from '../entity';
 import { shuffle } from 'lodash-es';
 import { deck } from '../card-db';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-drawing-cards',
   templateUrl: './drawing-cards.component.html',
   styleUrls: ['./drawing-cards.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush, 
 })
 export class DrawingCardsComponent  {
   @Output() endGame = new EventEmitter<boolean>();

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Medal, Medals, PointsByDate } from '../entity';
@@ -8,6 +8,7 @@ import { MedalsService } from 'src/app/services/medals.service';
   selector: 'app-no-card-left',
   templateUrl: './no-card-left.component.html',
   styleUrls: ['./no-card-left.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush, 
 })
 export class NoCardLeftComponent implements OnInit {
   @Output() shuffleDeck: EventEmitter<any> = new EventEmitter();
