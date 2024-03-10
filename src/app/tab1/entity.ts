@@ -7,6 +7,11 @@ export interface Card {
   difficulty: Difficulty,
 }
 
+export interface PointsByDate {
+  points: number,
+  date: Date,
+
+}
 export const Difficulties = {
   Hard : { color: "danger", message: "Hard as a rock", points: 3},
   Medium : { color: "warning", message: "Not too hard, not too easy", points: 2},
