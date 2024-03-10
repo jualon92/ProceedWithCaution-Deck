@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Medal, Medals, PointsByDate } from '../entity';
 import { StorageService } from '../../storage-service';
+import { MedalsService } from 'src/app/services/medals.service';
 @Component({
   selector: 'app-no-card-left',
   templateUrl: './no-card-left.component.html',
@@ -12,7 +13,7 @@ export class NoCardLeftComponent implements OnInit {
   @Output() shuffleDeck: EventEmitter<any> = new EventEmitter();
   medal : Medal = { color: "warning", message: "Bronze", image : "./assets/images/bronze.png"}
 
-  constructor(private router: Router, private route : ActivatedRoute, private storageService: StorageService) { }
+  constructor(private medalsService: MedalsService, private router: Router, private route : ActivatedRoute, private storageService: StorageService) { }
 
   ngOnInit() {
     // get query params from url
@@ -20,15 +21,11 @@ export class NoCardLeftComponent implements OnInit {
           const points = params['points'];
           const pointsByDate = {points: points, date: new Date()}
           this.storageService.savePoints(pointsByDate)
-          this.medal = this.getMedalsByPoints(points);       
+          this.medal = this.medalsService.getMedalsByPoints(points);       
      })
   }
 
-  getMedalsByPoints(points:number){
-    if (points < 3) return Medals.Bronze;
-    if (points < 6) return Medals.Silver;
-    return Medals.Gold;
-  }
+
 
 
 
