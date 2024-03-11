@@ -15,7 +15,7 @@ export class Tab2Page  {
  
 
   async ionViewDidEnter(): Promise<void> {
-    this.points = await this.storageService.get('points');
+    this.points = await this.storageService.get('points')?.then((points) => points.reverse());
   
   }
  
