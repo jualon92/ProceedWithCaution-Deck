@@ -8,4 +8,18 @@
   }
 }
 
+.card{
+  @media screen and (min-width: 1240px){
+    width: 35%;
+    align-self: center;
+  }
+  
+}
+
+.actions-container{
+  @media screen and (min-width: 1240px){
+    gap: 10%;
+    justify-content: center;
+  }
+}
   
